@@ -25,7 +25,7 @@ With a mapper
 
 __Please keep in your mind that this repository still a proof of concept, and absolutely not ready for production. A contribution, idea, discussion is always welcomed__
 
-A version which is using the mapstruct 1.3.0.Beta2 is available on [jitpack.io](https://jitpack.io/#Pozo/mapstruct-kotlin).  
+A version which is using the mapstruct 1.3.0.Final is available on [jitpack.io](https://jitpack.io/#mrgalwen/mapstruct-kotlin).  
 
 #### Jitpack howto
     
