@@ -1,4 +1,4 @@
-import org.gradle.api.JavaVersion.*
+import org.gradle.api.JavaVersion.VERSION_1_8
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "com.github.pozo"
@@ -19,23 +19,28 @@ apply(plugin = "maven-publish")
 repositories {
     mavenLocal()
     mavenCentral()
-    maven ( url = "https://kotlin.bintray.com/kotlinx" )
+    maven(url = "https://kotlin.bintray.com/kotlinx")
 }
 
 dependencies {
-    implementation("org.mapstruct:mapstruct:${extra["mapstructVersion"]}")
-    implementation("org.mapstruct:mapstruct-processor:${extra["mapstructVersion"]}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${extra["kotlin_version"]}")
-    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:${extra["kotlinxMetadataVersion"]}")
-    implementation("com.google.auto.service:auto-service:${extra["autoServiceVersion"]}")
-    implementation("com.squareup:javapoet:${extra["javaPoetVersion"]}")
+    implementation(platform(project(":mapstruct-kotlin-platform")))
+    kapt(platform(project(":mapstruct-kotlin-platform")))
+
+    implementation(kotlin("stdlib-jdk8"))
+
+    implementation("org.mapstruct:mapstruct")
+    implementation("org.mapstruct:mapstruct-processor")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm")
+    implementation("com.google.auto.service:auto-service")
+    implementation("com.squareup:javapoet")
 
     implementation(project(":mapstruct-kotlin-builder"))
 
-    kapt ("com.google.auto.service:auto-service:${extra["autoServiceVersion"]}")
+    kapt("com.google.auto.service:auto-service")
 
-    testImplementation ("org.mockito:mockito-core:2.28.2")
-    testImplementation ("junit:junit:4.12")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("junit:junit")
 }
 
 publishing {

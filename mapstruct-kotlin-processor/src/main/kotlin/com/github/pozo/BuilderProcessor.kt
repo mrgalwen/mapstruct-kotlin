@@ -21,7 +21,6 @@ import javax.lang.model.element.TypeElement
 import javax.lang.model.util.ElementFilter
 import kotlin.streams.toList
 
-
 @AutoService(Processor::class)
 class BuilderProcessor : AbstractProcessor() {
 

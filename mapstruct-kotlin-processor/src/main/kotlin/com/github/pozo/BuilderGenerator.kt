@@ -29,7 +29,9 @@ object BuilderGenerator {
     object Setter {
 
         fun TypeSpec.Builder.addSetterMethod(
-            variableElement: VariableElement, packageName: String, builderClassName: String
+            variableElement: VariableElement,
+            packageName: String,
+            builderClassName: String
         ): VariableElement {
             createSetterMethodSpec(
                 variableElement.name(),
@@ -43,7 +45,10 @@ object BuilderGenerator {
         }
 
         private fun createSetterMethodSpec(
-            fieldName: String, packageName: String, builderClassName: String, fieldType: TypeName
+            fieldName: String,
+            packageName: String,
+            builderClassName: String,
+            fieldType: TypeName
         ): MethodSpec {
             return MethodSpec.methodBuilder("set${fieldName.capitalize()}")
                 .addModifiers(Modifier.PUBLIC)

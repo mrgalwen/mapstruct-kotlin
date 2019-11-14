@@ -1,0 +1,108 @@
+autoCorrect: true
+
+build:
+  maxIssues: 0
+
+complexity:
+  active: true
+  ComplexMethod:
+    threshold: 15
+    ignoreSingleWhenExpression: true
+  TooManyFunctions:
+    active: true
+    ignorePrivate: true
+    ignoreOverridden: true
+    thresholdInFiles: 50
+    thresholdInClasses: 50
+    thresholdInInterfaces: 50
+    thresholdInObjects: 50
+    thresholdInEnums: 50
+  StringLiteralDuplication:
+    active: true
+    excludes: "**/test/**,**/*.Test.kt,**/*.Spec.kt"
+    threshold: 5
+    ignoreAnnotation: true
+    excludeStringsWithLessThan5Characters: true
+    ignoreStringsRegex: '$^'
+  LongMethod:
+    active: true
+    threshold: 80
+  LongParameterList:
+    active: true
+    threshold: 8
+    ignoreDefaultParameters: false
+
+exceptions:
+  NotImplementedDeclaration:
+    active: true
+  InstanceOfCheckForException:
+    active: true
+  RethrowCaughtException:
+    active: true
+  ReturnFromFinally:
+    active: true
+  SwallowedException:
+    active: false
+  ThrowingExceptionFromFinally:
+    active: true
+  ThrowingExceptionsWithoutMessageOrCause:
+    active: true
+  ThrowingNewInstanceOfSameException:
+    active: true
+
+naming:
+  VariableNaming:
+    active: true
+    variablePattern: '[a-z][A-Za-z0-9]*'
+    privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$^'
+  FunctionNaming:
+    active: true
+    functionPattern: '^([a-z$][a-zA-Z$0-9_]*)$'
+
+potential-bugs:
+  UnsafeCast:
+    active: true
+    excludes: "**/test/**,**/*.Test.kt,**/*.Spec.kt"
+  UselessPostfixExpression:
+    active: true
+
+empty-blocks:
+  EmptyFunctionBlock:
+    active: true
+    ignoreOverriddenFunctions: true
+
+style:
+  active: true
+  CollapsibleIfStatements:
+    active: true
+  MaxLineLength:
+    excludes: "**/test/**,**/*.Test.kt,**/*.Spec.kt"
+    excludeCommentStatements: true
+  WildcardImport:
+    active: true
+    excludeImports: 'java.util.*,kotlinx.android.synthetic.*'
+  MagicNumber:
+    ignoreHashCodeFunction: true
+    ignorePropertyDeclaration: true
+    ignoreAnnotation: true
+    ignoreEnums: true
+    ignoreNumbers: '-1,0,1,2,100,1000'
+  NestedClassesVisibility:
+    active: true
+  MayBeConst:
+    active: true
+  SpacingBetweenPackageAndImports:
+    active: true
+  UtilityClassWithPublicConstructor:
+    active: true
+  VariableNaming:
+    active: true
+    variablePattern: '(_)?[a-z][a-zA-Z0-9]*'
+  UnusedPrivateMember:
+    active: true
+    allowedNames: "(_|ignored|expected)"
+  MandatoryBracesIfStatements:
+    active: true
+  NewLineAtEndOfFile:
+    active: false

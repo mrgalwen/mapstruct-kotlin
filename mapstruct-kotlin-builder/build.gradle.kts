@@ -19,7 +19,9 @@ repositories {
 }
 
 dependencies {
-    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(platform(project(":mapstruct-kotlin-platform")))
+
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 publishing {
@@ -29,7 +31,7 @@ publishing {
             artifactId = "mapstruct-kotlin"
             version = version
 
-            from (components["java"])
+            from(components["java"])
         }
     }
 }
